@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AdZero Help Center</title>
+  <meta name="description" content="Answers and contact details for AdZero, the ad blocker for iPhone, iPad and Android.">
+  <link rel="icon" href="logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="topbar">
+  <div class="wrap">
+    <a class="brand" href="./"><img src="logo.svg" alt="">AdZero</a>
+    <nav>
+      <a href="./" aria-current="page">Help</a>
+      <a href="privacy/">Privacy</a>
+    </nav>
+  </div>
+</div>
+
+<main class="wrap">
+  <section class="intro">
+    <h1>AdZero Help Center</h1>
+    <p class="lead">
+      Short answers to the things people ask us most. If your question isn’t here, scroll to the bottom and send us an email.
+    </p>
+  </section>
+
+  <section class="topic">
+    <h2>Getting started</h2>
+
+    <h3>What does AdZero actually block?</h3>
+    <p>
+      Requests to known ad networks, in-app ad providers, trackers and analytics services. The lists are built into the app,
+      so blocking works the moment you switch protection on.
+    </p>
+
+    <h3>Why did my phone ask me to add a VPN profile?</h3>
+    <p>
+      Neither iOS nor Android lets an app filter domain lookups any other way. The “VPN” AdZero creates never leaves your
+      phone: it only catches DNS requests, drops the ones that point to ads and passes the rest to a public DNS server.
+      Websites, video and messages keep going over your regular connection.
+    </p>
+
+    <h3>How do I switch protection on or off?</h3>
+    <p>
+      Tap the shield on the main screen. You can also disconnect AdZero from the VPN section of your phone’s system settings.
+    </p>
+
+    <h3>Which DNS server is used, and can I pick another one?</h3>
+    <p>
+      Cloudflare is used out of the box. Google Public DNS and Quad9 are also available under Settings → DNS server. Turn
+      protection off first — the server can only be changed while AdZero is disconnected.
+    </p>
+  </section>
+
+  <section class="topic">
+    <h2>Troubleshooting</h2>
+
+    <h3>A site or app broke after I turned AdZero on</h3>
+    <p>
+      Some services load their content from the same domains they use for ads. Add the site under Settings → Allowed sites
+      and AdZero will leave it — and all its subdomains — alone. The Statistics screen lists the domains blocked most often,
+      which helps to find the culprit.
+    </p>
+
+    <h3>I still see some ads</h3>
+    <p>
+      AdZero works at the domain level. When an app shows ads from the very server that delivers its videos or posts, there
+      is nothing to separate them by, so those ads get through. Double-check that the shield is on, too.
+    </p>
+
+    <h3>Protection keeps switching off</h3>
+    <p>
+      On iPhone and iPad, enable Always on in AdZero’s Settings so it reconnects after a restart or a network change. On
+      Android this is a system option: open Settings → Network &amp; internet → VPN, tap the gear next to AdZero and turn on
+      Always-on VPN.
+    </p>
+
+    <h3>AdZero disconnected when I opened another VPN app</h3>
+    <p>
+      That’s expected — your phone can run only one VPN at a time. Starting a different VPN turns AdZero off, and turning
+      AdZero on disconnects the other one.
+    </p>
+  </section>
+
+  <section class="topic">
+    <h2>Privacy</h2>
+
+    <h3>Do you see what I browse?</h3>
+    <p>
+      No. AdZero has no servers and no sign-in, and the app contains no analytics. Blocking statistics are saved on your
+      phone only; clear them with Reset statistics in Settings or on the Statistics screen. The full picture is in the
+      <a href="privacy/">Privacy Policy</a>.
+    </p>
+  </section>
+
+  <section class="contact" id="contact">
+    <h2>Still need help?</h2>
+    <p>
+      Email us at <a href="mailto:joshua@dkbarakbookkeeping.com">joshua@dkbarakbookkeeping.com</a>. It speeds things up if
+      you mention your phone model, its iOS or Android version and the AdZero version listed in Settings.
+    </p>
+    <a class="button" href="mailto:joshua@dkbarakbookkeeping.com?subject=AdZero%20question">Send an email</a>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    AdZero is published by D.K. BARAK BOOK KEEPING LTD. · <a href="privacy/">Privacy</a>
+  </div>
+</footer>
+</body>
+</html>

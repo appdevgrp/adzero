@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AdZero Privacy</title>
+  <meta name="description" content="How AdZero handles your information on iPhone, iPad and Android.">
+  <link rel="icon" href="../logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div class="topbar">
+  <div class="wrap">
+    <a class="brand" href="../"><img src="../logo.svg" alt="">AdZero</a>
+    <nav>
+      <a href="../">Help</a>
+      <a href="./" aria-current="page">Privacy</a>
+    </nav>
+  </div>
+</div>
+
+<main class="wrap">
+  <section class="intro">
+    <h1>Privacy at AdZero</h1>
+    <p class="muted">Last updated 19 November 2026</p>
+    <p class="lead">
+      AdZero is an ad and tracker blocker for iPhone, iPad and Android, published by D.K. BARAK BOOK KEEPING LTD.
+      This page describes what the app does with information, in plain terms. When we say “we”, we mean the publisher.
+    </p>
+  </section>
+
+  <section class="facts" aria-label="Key points">
+    <div class="fact"><strong>No servers</strong><span>We don’t run any backend for AdZero. Nothing the app does depends on us.</span></div>
+    <div class="fact"><strong>No accounts</strong><span>There is nothing to sign up for and no profile tied to you.</span></div>
+    <div class="fact"><strong>No tracking</strong><span>No analytics, ads, crash reporters or other third-party SDKs are included.</span></div>
+    <div class="fact"><strong>Stays on the phone</strong><span>Your settings and blocking statistics never leave the device.</span></div>
+  </section>
+
+  <section>
+    <h2>Who is responsible</h2>
+    <p>
+      D.K. BARAK BOOK KEEPING LTD. develops and distributes AdZero. You can reach us about anything on this page at
+      <a href="mailto:joshua@dkbarakbookkeeping.com">joshua@dkbarakbookkeeping.com</a>.
+    </p>
+  </section>
+
+  <section>
+    <h2>What happens to your network traffic</h2>
+    <p>
+      To filter ads, AdZero asks your phone for permission to add a VPN profile. It uses the operating system’s standard
+      tools for this — Network Extension on iPhone and iPad, <code>VpnService</code> on Android. Despite the name, this VPN
+      has no remote end: it is a small local filter that runs on the phone itself.
+    </p>
+    <p>The filter is set up so that it only ever sees domain name (DNS) lookups:</p>
+    <ul>
+      <li>The phone is told to send its DNS lookups to an address that exists only inside the filter. That address is the only thing routed into it.</li>
+      <li>For every lookup, AdZero compares the requested domain with the lists shipped inside the app and with the sites you have allowed.</li>
+      <li>If the domain belongs to an ad or tracking service, AdZero immediately replies that the domain does not exist. That lookup goes nowhere.</li>
+      <li>Any other lookup is passed on to the public DNS service you picked, and its answer is handed back to the app that asked.</li>
+    </ul>
+    <p>
+      Pages, videos, downloads, messages and every other kind of traffic travel over your usual connection without
+      entering the filter. AdZero cannot read them, and it never learns full web addresses or what is inside a connection.
+      The blocking lists are part of the app; it does not download them or anything else from us.
+    </p>
+  </section>
+
+  <section>
+    <h2>Public DNS services</h2>
+    <p>
+      Lookups that aren’t blocked still have to be answered by someone, so AdZero sends them straight from your phone to
+      one of three public DNS services. Like any server your phone talks to, the service you choose receives the domain
+      being looked up and your phone’s public IP address.
+    </p>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>Service</th><th>Addresses</th><th>Its privacy terms</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Cloudflare <span class="muted">(default)</span></td>
+            <td>1.1.1.1 · 1.0.0.1</td>
+            <td><a href="https://developers.cloudflare.com/1.1.1.1/privacy/public-dns-resolver/" rel="noopener">Cloudflare resolver policy</a></td>
+          </tr>
+          <tr>
+            <td>Google Public DNS</td>
+            <td>8.8.8.8 · 8.8.4.4</td>
+            <td><a href="https://developers.google.com/speed/public-dns/privacy" rel="noopener">Google Public DNS privacy</a></td>
+          </tr>
+          <tr>
+            <td>Quad9</td>
+            <td>9.9.9.9 · 149.112.112.112</td>
+            <td><a href="https://quad9.net/privacy/policy/" rel="noopener">Quad9 data privacy policy</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      These services are run by independent companies. We have no contract with them and get nothing from them; how they
+      treat the lookups is set by their own terms, so it’s worth reading them before you switch. AdZero sends lookups in
+      regular, unencrypted DNS format, which means your internet or mobile provider can also see them — exactly as it could
+      without AdZero. You can change the service in Settings → DNS server while protection is off.
+    </p>
+  </section>
+
+  <section>
+    <h2>What the app keeps on your phone</h2>
+    <p>
+      AdZero saves a small amount of data in its own private storage on the device. On iPhone and iPad this storage is
+      shared only between the app and its filter extension. We never receive any of it.
+    </p>
+    <ul>
+      <li><strong>Preferences</strong> — the DNS service you picked, your allowed sites and, on iPhone and iPad, whether Always on is enabled.</li>
+      <li><strong>Lookup counts</strong> — how many lookups happened and how many were blocked on each day. Days older than 30 days are discarded automatically.</li>
+      <li><strong>Today by the hour</strong> — how many lookups were blocked in each hour of the current day, replaced every new day.</li>
+      <li><strong>Top blocked domains</strong> — names of blocked domains with a count, up to 100 per day over the same 30 days.</li>
+    </ul>
+    <p>
+      Domains that were <em>allowed</em> are counted but their names are never written down. The statistics hold no IP
+      addresses, no web addresses and nothing about which app sent a lookup. The VPN profile itself lives in your phone’s
+      system settings.
+    </p>
+    <p>
+      On iPhone and iPad this data can end up in an iCloud or computer backup that you make, the same as any app data; those
+      backups are yours and Apple’s, not ours. On Android, AdZero opts out of system backups.
+    </p>
+  </section>
+
+  <section>
+    <h2>Things we never collect</h2>
+    <p>Since there is no AdZero server, none of the following reaches us:</p>
+    <ul class="columns">
+      <li>DNS lookups or browsing history</li>
+      <li>Statistics from the app</li>
+      <li>Name, email or phone number</li>
+      <li>IP address or location</li>
+      <li>Contacts, photos or files</li>
+      <li>Advertising ID or device IDs</li>
+      <li>Usage analytics or crash logs</li>
+      <li>Payment details</li>
+    </ul>
+    <p>
+      AdZero has no in-app purchases, sends no push notifications and does not sync to any cloud. If you have opted in to
+      sharing diagnostics with developers in your phone’s settings, Apple or Google may pass us anonymous crash reports and
+      aggregate usage figures through their developer consoles. We look at those only to fix bugs.
+    </p>
+  </section>
+
+  <section>
+    <h2>Sharing and selling</h2>
+    <p>
+      We don’t hold personal data, so there is nothing for us to sell, rent, share or use for advertising or profiling.
+      The only outside parties involved are the DNS service you choose, as explained above, and Apple or Google as the app
+      store and operating system provider, whose own policies cover their services.
+    </p>
+  </section>
+
+  <section>
+    <h2>Removing your data</h2>
+    <ul>
+      <li>Wipe the statistics with <strong>Reset statistics</strong>, found in Settings and on the Statistics screen.</li>
+      <li>Manage exceptions in <strong>Settings → Allowed sites</strong>.</li>
+      <li>Delete the VPN profile from your phone’s VPN settings at any time (iPhone and iPad: Settings → General → VPN &amp; Device Management; Android: Settings → Network &amp; internet → VPN).</li>
+      <li>Uninstall AdZero to erase everything it stored, together with its VPN profile. Older backups you created keep their copy until you delete them.</li>
+    </ul>
+    <p>
+      There is nothing about you on our side to erase. Questions about lookups already sent to a DNS service should go to
+      that service.
+    </p>
+  </section>
+
+  <section>
+    <h2>Your rights</h2>
+    <p>
+      Privacy laws such as the GDPR in the EU and UK or the CCPA/CPRA in California give you rights over personal data a
+      company holds about you — for example to see it, fix it, take it elsewhere, have it erased or object to how it is used,
+      as well as to complain to a data protection authority. We are happy to answer any such request, but in practice we
+      will have nothing to hand over, because the data AdZero creates exists only on your phone, where you control it
+      directly. We do not sell or share personal information as the CCPA defines those terms, and using your rights will
+      never affect how the app works for you.
+    </p>
+  </section>
+
+  <section>
+    <h2>Children</h2>
+    <p>
+      AdZero is not aimed at children under 13, or under the age of digital consent where you live. We don’t knowingly
+      receive personal information from anyone; if you think a child has sent us some, write to us and we will delete it.
+    </p>
+  </section>
+
+  <section>
+    <h2>Keeping data safe</h2>
+    <p>
+      Filtering happens on the device and only unblocked lookups leave it. Stored data sits in the app’s private storage,
+      out of reach of other apps and covered by the phone’s own encryption. No system is perfectly secure, so we also
+      suggest keeping a passcode on your phone.
+    </p>
+  </section>
+
+  <section>
+    <h2>Updates to this page</h2>
+    <p>
+      If AdZero changes in a way that affects this policy, we will revise this page and its date. Any change that would
+      make the app collect information will be announced in the release notes or inside the app before it applies.
+    </p>
+  </section>
+
+  <section class="contact">
+    <h2>Questions?</h2>
+    <p>
+      D.K. BARAK BOOK KEEPING LTD.<br>
+      <a href="mailto:joshua@dkbarakbookkeeping.com">joshua@dkbarakbookkeeping.com</a>
+    </p>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    AdZero is published by D.K. BARAK BOOK KEEPING LTD. · <a href="../">Help</a>
+  </div>
+</footer>
+</body>
+</html>
