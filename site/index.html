@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AdZero Support</title>
+  <meta name="description" content="Help and support for AdZero, the on-device ad and tracker blocker for iPhone, iPad and Android.">
+  <link rel="icon" href="logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="topbar">
+  <div class="wrap">
+    <a class="brand" href="./"><img src="logo.svg" alt="">AdZero</a>
+    <nav><a href="privacy/">Privacy Policy</a></nav>
+  </div>
+</div>
+
+<header class="hero wrap">
+  <img src="logo.svg" alt="AdZero app icon">
+  <h1>How can we help?</h1>
+  <p>Questions, problems or ideas about AdZero for iPhone, iPad and Android — write to us and we’ll get back to you.</p>
+</header>
+
+<main class="wrap">
+  <section class="card contact">
+    <h2>Contact support</h2>
+    <p class="muted">We read every message.</p>
+    <p class="email"><a href="mailto:joshua@dkbarakbookkeeping.com">joshua@dkbarakbookkeeping.com</a></p>
+    <div class="actions">
+      <a class="button" href="mailto:joshua@dkbarakbookkeeping.com?subject=AdZero%20support">Write to us</a>
+      <button class="button secondary" type="button" id="copy-email" data-email="joshua@dkbarakbookkeeping.com">Copy email</button>
+    </div>
+    <p class="tip">Tip: include your device model, iOS or Android version and the app version (Settings → Version in AdZero).</p>
+  </section>
+
+  <h2>Frequently asked questions</h2>
+
+  <details>
+    <summary>Why do I see a VPN icon?</summary>
+    <p>
+      AdZero uses an on-device VPN that only carries DNS lookups — the step where an app asks where a server lives.
+      Your actual traffic goes straight to the internet and is never routed through our servers. We don’t have any.
+    </p>
+  </details>
+
+  <details>
+    <summary>A website or app doesn’t work properly</summary>
+    <p>
+      Open Settings → Allowed sites and add the site that’s being blocked. Allowed sites are never blocked and cover
+      subdomains too. You can see the most blocked domains on the Statistics screen.
+    </p>
+  </details>
+
+  <details>
+    <summary>Some ads are still showing</summary>
+    <p>
+      AdZero blocks ads by domain name. Ads delivered from the same domain as the content itself (for example, in some
+      video or social apps) can’t be blocked this way. Also check that protection is on.
+    </p>
+  </details>
+
+  <details>
+    <summary>Protection turns off by itself</summary>
+    <p>
+      On iPhone and iPad, go to Settings in AdZero and turn on Always on — protection will then reconnect automatically
+      after network changes and restarts. On Android, turn on Always-on VPN for AdZero in the system settings
+      (Settings → Network &amp; internet → VPN).
+    </p>
+  </details>
+
+  <details>
+    <summary>How do I turn AdZero off?</summary>
+    <p>
+      Tap the shield on the AdZero home screen. You can also switch it off from the VPN section of your device’s settings.
+    </p>
+  </details>
+
+  <details>
+    <summary>Which DNS provider does AdZero use?</summary>
+    <p>
+      Cloudflare by default. You can switch to Google Public DNS or Quad9 in Settings → DNS server while protection is off.
+    </p>
+  </details>
+
+  <details>
+    <summary>Can I use AdZero together with another VPN?</summary>
+    <p>
+      No. iOS and Android allow only one active VPN at a time, so turning on another VPN switches AdZero off, and vice versa.
+    </p>
+  </details>
+
+  <details>
+    <summary>Does AdZero collect my data?</summary>
+    <p>
+      No. There are no accounts, no analytics and no AdZero servers. Statistics are stored only on your device and you
+      can erase them any time with Reset statistics in Settings or on the Statistics screen. Details are in our <a href="privacy/">Privacy Policy</a>.
+    </p>
+  </details>
+</main>
+
+<footer>
+  <div class="wrap">
+    © 2026 D.K. BARAK BOOK KEEPING LTD.<br>
+    <a href="privacy/">Privacy Policy</a> · <a href="mailto:joshua@dkbarakbookkeeping.com">joshua@dkbarakbookkeeping.com</a>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("copy-email").addEventListener("click", function () {
+    var button = this;
+    navigator.clipboard.writeText(button.dataset.email).then(function () {
+      button.textContent = "Copied";
+      setTimeout(function () { button.textContent = "Copy email"; }, 2000);
+    });
+  });
+</script>
+</body>
+</html>
